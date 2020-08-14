@@ -1,0 +1,4 @@
+language: cpp
+before_script: cd main
+script: make
+after_script: ./hello 
