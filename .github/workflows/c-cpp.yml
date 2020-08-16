@@ -17,3 +17,15 @@ jobs:
       run: cd main && make
     - name: run
       run: cd main && ./hello
+  build_ios:
+    name: Build on MacOS 
+    runs-on: macOS-latest
+    steps:
+    - uses: actions/checkout@v2
+    - run: uname
+    - run: cd main && make
+    - name: Upload Exec
+      uses: actions/upload-artifact@master
+      with:
+        name: mac-build
+        path: build/darwin
